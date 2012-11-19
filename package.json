@@ -1,0 +1,24 @@
+{
+  "name": "JStringBuilder",
+  "version": "0.1.0",
+  "description": "StringBuilder for JavaScript",
+  "main": "./lib/stringbuilder.js",
+  "author": {
+    "name": "Brandon Mills",
+    "twitter": "brandontmills"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/btmills/JStringBuilder.git"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {
+    "coffee-script": "latest",
+    "mocha": "latest",
+  },
+  "scripts": {
+    "test": "cake test"
+  }
+}

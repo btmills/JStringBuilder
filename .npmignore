@@ -1,0 +1,9 @@
+.gitignore
+.npmignore
+README.md
+test
+src
+docs
+examples
+node_modules
+*.js
