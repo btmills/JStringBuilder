@@ -17,7 +17,7 @@
 				return src.split ''
 			else if typeof src == 'number'
 				src.toString().split ''
-			else if src.constructor == this
+			else if src.constructor == exports.StringBuilder
 				return src.chars
 			else if src instanceof Array
 				return src
@@ -56,12 +56,12 @@
 		reverse: ->
 			@chars = @chars.reverse()
 
-		substring: (start, end) ->
+		substring: (start, end) =>
 			end = @chars.length if not end # If no end, return rest of string
 			if 0 <= start < end
-				return @chars.slice(start, end).join ''
+				return new exports.StringBuilder @chars.slice(start, end).join ''
 			else
-				return ''
+				return new exports.StringBuilder
 
 		toString: ->
 			return @chars.join ''

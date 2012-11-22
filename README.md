@@ -88,11 +88,11 @@ console.log(sb.toString()); // Prints 'cba'
 
 ### <a name="substring"></a>substring(start, end)
 
-Get the substring on the interval [`start`, `end`).
+Get as StringBuilder containing just the substring on the interval [`start`, `end`).
 
 ```JavaScript
 var sb = new StringBuilder('abcde');
-console.log(sb.substring(2, 4)); // Prints 'cd'
+console.log(sb.substring(2, 4).toString()); // Prints 'cd'
 ```
 
 ## Developing

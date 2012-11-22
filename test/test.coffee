@@ -177,23 +177,23 @@ describe 'StringBuilder', ->
 		sb = new StringBuilder 'abcde'
 
 		it 'should return an empty string given end <= start', ->
-			assert.equal sb.substring(2, 2), ''
+			assert.equal sb.substring(2, 2).toString(), ''
 		it 'should return an empty string given start >= length', ->
-			assert.equal sb.substring(5, 7), ''
+			assert.equal sb.substring(5, 7).toString(), ''
 		it 'should return chars on the 0-based interval [start, end)', ->
-			assert.equal sb.substring(2, 4), 'cd'
+			assert.equal sb.substring(2, 4).toString(), 'cd'
 		it 'should return chars to end if end >= length', ->
-			assert.equal sb.substring(2, 9), 'cde'
+			assert.equal sb.substring(2, 9).toString(), 'cde'
 		# Not doing negative indices for now
 		# it 'should count from the end given an index < 0', ->
 		# 	assert.equal sb.substring(0, -3), 'ab'
 		# 	assert.equal sb.substring(-3, -1), 'cd'
 		# 	assert.equal sb.substring(-3, 99), 'cde'
 		it 'should return the rest of the string given no end', ->
-			assert.equal sb.substring(2), 'cde'
+			assert.equal sb.substring(2).toString(), 'cde'
 		it 'should return the whole string given [0, length)', ->
-			assert.equal sb.substring(0, 5), 'abcde'
+			assert.equal sb.substring(0, 5).toString(), 'abcde'
 		it 'should return an empty string given a negative index', ->
-			assert.equal sb.substring(-1, 1), ''
-			assert.equal sb.substring(1, -1), ''
-			assert.equal sb.substring(-2, -1), ''
+			assert.equal sb.substring(-1, 1).toString(), ''
+			assert.equal sb.substring(1, -1).toString(), ''
+			assert.equal sb.substring(-2, -1).toString(), ''
