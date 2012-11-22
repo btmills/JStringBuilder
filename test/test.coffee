@@ -125,6 +125,10 @@ describe 'StringBuilder', ->
 				assert.equal sb.toString(), 'ab'
 
 		describe 'given start and end', ->
+			it 'should do nothing if end = 0', ->
+				sb = new StringBuilder 'abc'
+				sb.remove 0, 0
+				assert.equal sb.toString(), 'abc'
 			it 'should do nothing if end <= start', ->
 				sb = new StringBuilder 'abcde'
 				sb.remove 2, 2
@@ -176,6 +180,8 @@ describe 'StringBuilder', ->
 	describe '#substring(start, end)', ->
 		sb = new StringBuilder 'abcde'
 
+		it 'should return an empty string given start = end = 0', ->
+			assert.equal sb.substring(0, 0).toString(), ''
 		it 'should return an empty string given end <= start', ->
 			assert.equal sb.substring(2, 2).toString(), ''
 		it 'should return an empty string given start >= length', ->

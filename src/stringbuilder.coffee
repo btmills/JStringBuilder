@@ -48,7 +48,7 @@
 			return @chars.length
 
 		remove: (start, end) ->
-			if not end and -@chars.length <= start < @chars.length
+			if end is undefined and -@chars.length <= start < @chars.length
 				@chars.splice start, 1
 			else if 0 <= start < end
 				@chars.splice start, end - start
@@ -57,7 +57,7 @@
 			@chars = @chars.reverse()
 
 		substring: (start, end) =>
-			end = @chars.length if not end # If no end, return rest of string
+			end = @chars.length if end is undefined # If no end, return rest of string
 			if 0 <= start < end
 				return new exports.StringBuilder @chars.slice(start, end).join ''
 			else
